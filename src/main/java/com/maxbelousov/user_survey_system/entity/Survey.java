@@ -2,9 +2,15 @@ package com.maxbelousov.user_survey_system.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
 @Entity
 @Table(name = "survey")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Survey {
 
     @Id
@@ -24,53 +30,4 @@ public class Survey {
     @Column(name = "finish_date_time")
     private LocalDateTime finishDateTime;
 
-    public Survey() {
-    }
-
-    public Survey(String title, String description, LocalDateTime startDateTime, LocalDateTime finishDateTime) {
-        this.title = title;
-        this.description = description;
-        this.startDateTime = startDateTime;
-        this.finishDateTime = finishDateTime;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public LocalDateTime getStartDateTime() {
-        return startDateTime;
-    }
-
-    public void setStartDateTime(LocalDateTime startDateTime) {
-        this.startDateTime = startDateTime;
-    }
-
-    public LocalDateTime getFinishDateTime() {
-        return finishDateTime;
-    }
-
-    public void setFinishDateTime(LocalDateTime finishDateTime) {
-        this.finishDateTime = finishDateTime;
-    }
 }
