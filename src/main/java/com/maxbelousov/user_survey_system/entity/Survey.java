@@ -24,7 +24,7 @@ public class Survey {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "start_date_time")
+    @Column(name = "start_date_time", updatable = false)
     private LocalDateTime startDateTime;
 
     @Column(name = "finish_date_time")
