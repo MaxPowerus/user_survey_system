@@ -12,4 +12,10 @@ public class SurveyService {
 
   private final SurveyRepository surveyRepository;
 
+  /**
+   * Returns all instances of Survey class.
+   */
+  public List<Survey> getAllSurveys() {
+    return surveyRepository.findAll();
+  }
 }
