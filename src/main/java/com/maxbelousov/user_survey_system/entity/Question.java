@@ -22,7 +22,7 @@ public class Question {
   @Column(name = "question_id")
   private Long id;
 
-  @Column(name = "text")
-  private String text;
+  @Column(name = "description")
+  private String description;
 
 }

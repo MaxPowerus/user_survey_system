@@ -3,7 +3,7 @@ services:
   database:
     image: 'postgres'
     environment:
-      - POSTGRES_USER=admin
+      - POSTGRES_USER=uss_dev
       - POSTGRES_PASSWORD=password
     ports:
       - "5432:5432"

@@ -17,7 +17,7 @@ public class SurveyController {
   private final SurveyService surveyService;
 
   /**
-   * Returns all events.
+   * Returns all surveys.
    */
   @GetMapping("/all")
   private List<Survey> getAllSurveys() {

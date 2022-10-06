@@ -19,6 +19,6 @@ public class Answer {
   @Column(name = "answer_id")
   private Long id;
 
-  @Column(name = "answer")
-  private String answer;
+  @Column(name = "description")
+  private String description;
 }
