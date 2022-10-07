@@ -6,6 +6,7 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,8 +21,16 @@ public class SurveyController {
    * Returns all surveys.
    */
   @GetMapping("/all")
-  private List<Survey> getAllSurveys() {
+  public List<Survey> getAllSurveys() {
     return surveyService.getAllSurveys();
+  }
+
+  /**
+   * Returns survey by id.
+   */
+  @GetMapping("{surveyId}")
+  public Survey getSurveyById(@PathVariable("surveyId") Long surveyId){
+    return surveyService.getSurveyById(surveyId);
   }
 
 }
