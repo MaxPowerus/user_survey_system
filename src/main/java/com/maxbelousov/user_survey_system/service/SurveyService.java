@@ -21,9 +21,17 @@ public class SurveyService {
   }
 
   /**
-   * Retrieves survey object by its id.
+   * Retrieves Survey object by its id.
    */
   public Survey getSurveyById(Long id) {
-    return surveyRepository.findById(id).orElseThrow(() ->new SurveyNotFoundException("This survey is not exist"));
+    return surveyRepository.findById(id).orElseThrow(() -> new SurveyNotFoundException("This survey is not exist"));
+  }
+
+  /**
+   * Saves Survey object.
+   */
+  public Survey saveSurvey(Survey survey) {
+    Survey savedSurvey = surveyRepository.save(survey);
+    return savedSurvey;
   }
 }
