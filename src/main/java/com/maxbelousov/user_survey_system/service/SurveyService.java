@@ -6,6 +6,7 @@ import com.maxbelousov.user_survey_system.repository.SurveyRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 @Slf4j
@@ -36,5 +37,17 @@ public class SurveyService {
     Survey savedSurvey = surveyRepository.save(survey);
     log.info("Survey with title '{}' was added to the table survey.", savedSurvey.getTitle());
     return savedSurvey;
+  }
+
+  /**
+   * Updates Survey object.
+   */
+  public Survey updateSurvey(Survey survey, Long id) {
+    Survey surveyToUpdate = getSurveyById(id);
+    BeanUtils.copyProperties(survey, surveyToUpdate, "id", "startDateTime");
+    Survey savedUpdatedSurvey = surveyRepository.save(surveyToUpdate);
+    log.info("Survey with title '{}' in the table survey was updated",
+        savedUpdatedSurvey.getTitle());
+    return savedUpdatedSurvey;
   }
 }
