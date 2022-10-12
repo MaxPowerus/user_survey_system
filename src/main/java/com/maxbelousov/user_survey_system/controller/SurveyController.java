@@ -55,7 +55,7 @@ public class SurveyController {
       @PathVariable("surveyId") Long surveyId,
       @RequestBody Survey survey
   ) {
-    return surveyService.updateSurvey(survey, surveyId);
+    return surveyService.updateSurveyById(survey, surveyId);
   }
 
 }

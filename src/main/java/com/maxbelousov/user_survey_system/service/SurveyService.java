@@ -40,9 +40,9 @@ public class SurveyService {
   }
 
   /**
-   * Updates Survey object.
+   * Updates Survey object by id.
    */
-  public Survey updateSurvey(Survey survey, Long id) {
+  public Survey updateSurveyById(Survey survey, Long id) {
     Survey surveyToUpdate = getSurveyById(id);
     BeanUtils.copyProperties(survey, surveyToUpdate, "id", "startDateTime");
     Survey savedUpdatedSurvey = surveyRepository.save(surveyToUpdate);
