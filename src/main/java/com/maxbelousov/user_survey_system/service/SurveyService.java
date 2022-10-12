@@ -50,4 +50,12 @@ public class SurveyService {
         savedUpdatedSurvey.getTitle());
     return savedUpdatedSurvey;
   }
+
+  /**
+   * Deletes Survey object by its id.
+   */
+  public void deleteSurveyById(Long id) {
+    surveyRepository.deleteById(id);
+    log.info("Survey with id '{}' was deleted from the table survey", id);
+  }
 }
