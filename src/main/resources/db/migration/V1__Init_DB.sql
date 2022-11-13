@@ -23,5 +23,12 @@ create table survey (
 
 create table users (
   users_id int8 not null,
+  user_name varchar(255),
+  user_password varchar(255),
   primary key (users_id)
   );
+
+create table user_role (
+  user_id int8 not null,
+  roles varchar(255)
+   );
